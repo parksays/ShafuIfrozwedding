@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f1e5">
+<title>Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <section class="opening" id="opening">
+    <div class="curtain curtain-left"></div><div class="curtain curtain-right"></div>
+    <div class="opening-content">
+      <div class="monogram-ring">S <span>♡</span> I</div>
+      <button id="openBtn">OPEN INVITATION<br><small>♡</small></button>
+    </div>
+  </section>
+
+  <main id="invitation" class="hidden">
+    <section class="hero section">
+      <div class="stage-glow"></div><div class="chandelier">✦<br>✧ ✧ ✧<br>♢</div>
+      <div class="floral f1">❀</div><div class="floral f2">✿</div>
+      <p class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+      <div class="hero-names"><span id="heroBride"></span><em>&</em><span id="heroGroom"></span></div>
+      <div class="rings">◯ ◯</div>
+      <button class="scroll-btn" onclick="go('welcome')">SCROLL DOWN ↓</button>
+      <button class="music-btn" id="musicBtn">♫</button>
+    </section>
+
+    <section class="section welcome" id="welcome">
+      <div class="section-inner">
+        <p class="arabic pink">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+        <p class="translation">IN THE NAME OF ALLAH,<br>THE MOST GRACIOUS, THE MOST MERCIFUL</p>
+        <p class="intro">With the blessings of Almighty Allah,<br>Together with their families, we cordially<br>invite you to celebrate the <i>Nikah &amp; Valima</i><br>ceremony of</p>
+        <div class="person-card">
+          <label>THE BRIDE</label><h2 id="brideName"></h2><div class="heart">♥</div>
+          <small>DAUGHTER OF</small><strong id="brideParents"></strong><p id="brideExtra"></p>
+        </div>
+        <div class="and">♡ &amp; ♡</div>
+        <div class="person-card">
+          <label>THE GROOM</label><h2 id="groomName"></h2><div class="heart">♥</div>
+          <small>SON OF</small><strong id="groomParents"></strong><p id="groomExtra"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote">
+      <div class="quote-card">
+        <div class="arabic-quote">مَا رَأَيْنَا لِلْمُتَحَابَّيْنِ مِثْلَ النِّكَاحِ</div>
+        <p>It was narrated from Ibn Abbas that the Messenger of Allah ﷺ said:</p>
+        <i>“There is nothing like marriage, for two people who love one another.”</i>
+        <small>— SUNAN IBN MAJAH 1847</small>
+      </div>
+    </section>
+
+    <section class="section scratch">
+      <div class="scratch-inner">
+        <h3>Scratch all three circles</h3>
+        <button class="reveal-btn" onclick="revealAll()">★ &nbsp; REVEAL DATE</button>
+        <p class="scratch-title">SCRATCH TO DISCOVER THE DATE</p>
+        <div class="scratch-row">
+          <div class="scratch-heart"><canvas></canvas><span>DATE</span></div>
+          <div class="scratch-heart"><canvas></canvas><span>DATE</span></div>
+          <div class="scratch-heart"><canvas></canvas><span>DATE</span></div>
+        </div>
+        <div class="revealed" id="revealedDate"></div>
+      </div>
+    </section>
+
+    <section class="section events">
+      <div class="event-card">
+        <div class="mosque">☾</div><label>NIKAH</label>
+        <h2 id="nikahDate"></h2><div class="event-time">⏰ <span id="nikahTime"></span></div>
+        <h3>📍 <span id="venue1"></span></h3><p id="address1"></p>
+        <a id="map1" class="map-btn" target="_blank">⌖ &nbsp; VIEW LOCATION ON GOOGLE MAPS</a>
+      </div>
+      <div class="event-card">
+        <div class="building">✦</div><label>VALIMA</label>
+        <h2 id="valimaDate"></h2><div class="event-time">⏰ <span id="valimaTime"></span></div>
+        <h3>📍 <span id="venue2"></span></h3><p id="address2"></p>
+        <a id="map2" class="map-btn" target="_blank">⌖ &nbsp; VIEW LOCATION ON GOOGLE MAPS</a>
+      </div>
+    </section>
+
+    <section class="section countdown-section">
+      <p class="translation">THE BIG DAY IS COMING</p><h2>Save the Date</h2>
+      <div id="countdown" class="countdown"></div>
+      <div class="floral-center">❀ ❀ ❀</div>
+      <p class="closing">Your presence, prayers and blessings<br>will make our celebration complete.</p>
+    </section>
+
+    <section class="section family">
+      <p class="translation">WITH LOVE FROM</p><h2>Our Families</h2>
+      <div id="familyList"></div>
+      <p class="near">✦ NEAR &amp; DEAR ✦</p>
+    </section>
+
+    <section class="section thankyou">
+      <div class="envelope">
+        <div class="flap"></div><div class="letter"><strong>Thank You</strong><small>For your blessings &amp; love</small></div>
+      </div>
+      <h2 id="finalNames"></h2><p>— forever begins here —</p>
+    </section>
+  </main>
+</div>
+<audio id="music" loop><source src="music.mp3" type="audio/mpeg"></audio>
+<script src="config.js"></script><script src="script.js"></script>
+</body>
+</html>
